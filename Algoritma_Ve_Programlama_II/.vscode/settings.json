@@ -1,0 +1,5 @@
+{    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "cstring": "cpp"
+    },    "code-runner.executorMap": {        "cpp": "cd $dir && C:\\mingw64\\bin\\g++.exe $fileName -o $fileNameWithoutExt.exe && $dir\\$fileNameWithoutExt.exe"    },    "code-runner.runInTerminal": true}
