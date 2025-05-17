@@ -43,7 +43,7 @@ public:
     void setFiyat(double _fiyat) { fiyat = _fiyat; }
     
     // Arabanın yaşını hesaplayan metot
-    int yasHesapla(int suankiYil = 2023) {
+    int yasHesapla(int suankiYil = 2025) {
         return suankiYil - uretimYili;
     }
     

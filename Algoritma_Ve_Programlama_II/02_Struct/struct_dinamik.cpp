@@ -16,13 +16,14 @@ using namespace std;
 // Dinamik bellek içeren struct
 /*
  * Bu struct içinde dinamik bellek kullanımı gösteren üyeler var:
- * - ad ve soyad: char pointer'ları, dinamik olarak bellek ayrılacak
+ * - ad ve soyad: char pointer'ları, bellek dinamik olarak ayrılacak
  * - notlar: double pointer'ı, dinamik dizi olarak kullanılacak
  * 
  * Dinamik bellek içeren struct'lar kullanırken dikkat edilmesi gereken noktalar:
  * 1. Bellek ayırma (new/malloc)
  * 2. Belleği temizleme (delete/free)
  * 3. Derin kopyalama (deep copy) ihtiyacı
+ * Çünkü c++ eski bir dil.
  */
 struct Ogrenci {
     int numara;
@@ -115,7 +116,7 @@ int main() {
     // 3. Bellek temizleme
     /*
      * Dinamik bellek kullandığımız için, programın sonunda bu belleği serbest bırakmalıyız.
-     * Aksi halde bellek sızıntısı (memory leak) oluşur.
+     * Aksi halde bellek sızıntısı (memory leak) oluşur. Çünkü c++ hala eski bir dil.
      * 
      * Önce her bir öğrenci için ayrılan belleği, sonra sınıf için ayrılan belleği temizliyoruz.
      */
@@ -143,7 +144,7 @@ int main() {
  * 3. Notlar için bellek ayırma
  * 
  * C++'ta string sınıfı otomatik bellek yönetimi sağlar, ancak bu örnekte
- * C tarzı karakter dizileri (char*) kullanarak dinamik bellek yönetimini gösteriyoruz.
+ * C tarzı karakter dizileri (char*) kullanarak dinamik bellek yönetimini görüyoruz.
  */
 Ogrenci ogrenciOlustur(int numara, const char* ad, const char* soyad, int notSayisi) {
     Ogrenci yeniOgr;
@@ -183,9 +184,10 @@ Ogrenci ogrenciOlustur(int numara, const char* ad, const char* soyad, int notSay
 /*
  * Bu fonksiyon, Ogrenci struct'ını referans olarak alır ve bilgilerini gösterir.
  * const referans kullanarak, fonksiyonun struct'ı değiştirmesini engelliyoruz.
+ * Const, constant'ın kısaltmasıdır, sabit anlamına gelir.
  * 
  * Referans kullanarak, struct'ın kopyasını oluşturmaktan kaçınıyoruz,
- * bu da bellek ve zaman tasarrufu sağlar.
+ * bu da bellek ve zaman tasarrufu sağlıyor.
  */
 void ogrenciGoster(const Ogrenci& ogr) {
     cout << "   Öğrenci Bilgileri:" << endl;
@@ -218,6 +220,7 @@ void ogrenciGoster(const Ogrenci& ogr) {
  * 
  * Dinamik bellek içeren struct'ları kullanırken, belleği temizlemek çok önemlidir.
  * Aksi halde bellek sızıntısı oluşur ve program zamanla daha fazla bellek kullanır.
+ * Modern diller bu işi otomatik yaparlar, ama c++ hala eski bir dil.
  * 
  * Belleği temizledikten sonra, pointer'ları nullptr olarak ayarlamak güvenli bir uygulamadır.
  * Bu, dangling pointer (askıda kalan pointer) sorunlarını önler.
@@ -315,7 +318,7 @@ void sinifGoster(const Sinif& sinif) {
  * 1. Önce en içteki dinamik bellek temizlenir (her öğrenci için ayrılan bellek)
  * 2. Sonra dıştaki dinamik bellek temizlenir (öğrenci dizisi için ayrılan bellek)
  * 
- * Bu sıralamayı tersine çevirirseniz, içteki bellek bloklarına erişemez hale gelirsiniz
+ * Bu sıralamayı tersine çevirirsek, içteki bellek bloklarına erişemez hale geliriz
  * ve bellek sızıntısı oluşur.
  */
 void sinifTemizle(Sinif& sinif) {

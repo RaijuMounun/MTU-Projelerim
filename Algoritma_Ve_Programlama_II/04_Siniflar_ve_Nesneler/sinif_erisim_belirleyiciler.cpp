@@ -5,7 +5,7 @@
  * C++'ta üç temel erişim belirleyici vardır:
  * 1. public: Herkes tarafından erişilebilir
  * 2. private: Sadece kendi sınıfının üye fonksiyonları tarafından erişilebilir
- * 3. protected: Kendi sınıfı ve türetilmiş sınıflar tarafından erişilebilir
+ * 3. protected: Kendi sınıfı ve o sınıftan türetilmiş sınıflar tarafından erişilebilir
  */
 
 #include <iostream>
@@ -132,7 +132,7 @@ public:
     // Ana sınıfın metotlarını override etme (yeniden tanımlama)
     void bilgileriGoster() {
         // Ana sınıfın bilgileriGoster metotunu çağırma
-        Insan::bilgileriGoster();
+        Insan::bilgileriGoster(); // Çünkü bu örnekte ana sınıftaki işler yapılmaya devam etsin istiyoruz.
         
         // Öğrenciye özel bilgileri ekleyerek gösterme
         cout << "Öğrenci No: " << ogrenciNo << endl;
@@ -216,7 +216,7 @@ int main() {
     Insan insan2;
     
     // Private üyelere doğrudan erişilemez, sadece public metotlar üzerinden erişilebilir
-    // insan2.tcKimlik = "12345678901";  // Bu kod hata verir!
+    // insan2.tcKimlik = "12345678901";  // Bu kod hata verir.
     
     insan2.setTcKimlik("12345678901");
     insan2.setAd("Zeynep");
@@ -234,7 +234,7 @@ int main() {
     ogr1.bilgileriGoster();
     
     // Protected üyelere ana sınıf dışından doğrudan erişilemez
-    // ogr1.ad = "Yeni Ad";  // Bu kod hata verir!
+    // ogr1.ad = "Yeni Ad";  // Bu kod hata verir.
     
     // Ancak türetilmiş sınıf içindeki metotlar protected üyelere erişebilir
     ogr1.adSoyadDegistir("Mehmet Can", "Demir");

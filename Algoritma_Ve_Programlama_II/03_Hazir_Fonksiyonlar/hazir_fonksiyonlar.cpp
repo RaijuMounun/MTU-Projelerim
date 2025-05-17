@@ -266,9 +266,12 @@ void zamanFonksiyonlari() {
 void rastgeleSayiUretimi() {
     cout << "5) Rastgele Sayı Üretimi (cstdlib):" << endl;
     
-    // Rastgele sayı üreteci için tohum değeri atama
-    // Tohum değeri değişirse, üretilen sayı dizisi de değişir
-    srand(time(0));  // Geçerli zamanı tohum olarak kullan
+    // Rastgele sayı üreteci için tohum (seed) değeri atama
+    // Seed değeri değişirse, üretilen sayı dizisi de değişir
+    // Konu ilginizi çekiyorsa procedural generation şeklinde araştırabilirsiniz,
+    // benim bu konuda çok çalışmam yok, basit bir iki küçük projem var sadece,
+    // o yüzden pek bilgili sayılmam procedural generation konusunda.
+    srand(time(0));  // Geçerli zamanı seed olarak kullan
     
     cout << "   Rastgele sayılar (0-9 arası):" << endl;
     for (int i = 0; i < 10; i++) {

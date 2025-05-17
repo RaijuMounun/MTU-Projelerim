@@ -23,7 +23,7 @@ private:
 public:
     // Public üyeler: Sınıf dışından erişilebilir
     
-    // Constructor (Yapıcı) metot: Nesne oluşturulduğunda çağrılır
+    // Constructor (Yapıcı) metot: Nesne oluşturulduğunda otomatik çağrılır
     Ogrenci() {
         numara = 0;
         ad = "";

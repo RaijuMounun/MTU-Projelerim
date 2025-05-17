@@ -98,7 +98,7 @@ public:
     }
     
     void sesCikar() {
-        cout << cins << " havlıyor: Hav hav!" << endl;
+        cout << cins << " havlıyor" << endl;
     }
     
     void kuyrukSalla() {
@@ -126,7 +126,7 @@ public:
     }
     
     void sesCikar() {
-        cout << tur << " ötüyor: Cik cik!" << endl;
+        cout << tur << " ötüyor" << endl;
     }
     
     void uc() {

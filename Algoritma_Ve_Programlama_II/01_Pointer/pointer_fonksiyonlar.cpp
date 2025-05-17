@@ -1,5 +1,5 @@
 /**
- * Algoritma ve Programlama 2 - Pointer (İşaretçi) ve Fonksiyonlar
+ * Algoritma ve Programlama 2 - Pointer'lar (İşaretçiler) ve Fonksiyonlar
  * Bu program pointer'ların fonksiyonlarla kullanımını ve dinamik bellek yönetimini gösterir.
  */
 
@@ -7,6 +7,14 @@
 using namespace std;
 
 // Fonksiyon prototipleri
+// Prototip tanımlamasına şu yüzden ihtiyaç duyuyoruz:
+// Bir fonksiyonu çağırabilmek için, fonksiyonun önceden tanımlanmış olması gerekiyor.
+// Bu örnkete bir class kullanmadığımız, ve fonksiyonu tanımlamadan önce çağırdığımız için
+// prototip tanımlaması yapmamız gerekiyor.
+// Prototip de aslında programa şunu diyor: "Ben bu fonksiyonu kullanacağım ama çağırdığım
+// yerin altında tanımladım, aşağıda tanımını ara"
+// Bir class kullanıyor olsaydık, class'ın içinde fonksiyonun nerede tanımlandığının
+// bir önemi olmazdı ve istediğimiz yerde fonksiyonu çağırabilirdik, prototiplere ihtiyaç olmazdı.
 void degerIleGecirme(int _sayi);
 void pointerIleGecirme(int* sayi_ptr);
 void referansIleGecirme(int& sayi_ref);
@@ -55,7 +63,7 @@ int main() {
 // Main ayracı------------------------------------------------------------
 
 // Fonksiyon içindeki değişiklik main'deki değişkeni etkilemez
-//çünkü fonksiyon gönderilen değerin kopyasını alır.
+// çünkü fonksiyon gönderilen değerin kopyasını alır.
 void degerIleGecirme(int _sayi) {
     _sayi = 20;
     cout << "   Değer ile geçirme fonksiyonu içinde: " << _sayi << endl;
